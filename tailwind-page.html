@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage Boilerplate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .toggle-checkbox:checked {
+                @apply: right-0 border-green-400;
+                right: 0;
+                border-color: #68D391;
+            }
+            .toggle-checkbox:checked + .toggle-label {
+                @apply: bg-green-400;
+                background-color: #68D391;
+            }
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-white dark:bg-gray-800 text-gray-800 dark:text-white transition-colors duration-200">
+    <!-- Navbar -->
+    <nav class="bg-gray-100 dark:bg-gray-700 border-gray-200 dark:border-gray-600 px-4 py-2.5 transition-colors duration-200">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <a href="#" class="flex items-center">
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Site Name Here</span>
+            </a>
+            <div class="flex items-center md:order-2">
+                <!-- Theme toggle button -->
+                <div class="mr-3">
+                    <div class="relative inline-block w-10 mr-2 align-middle select-none">
+                        <input type="checkbox" name="toggle" id="theme-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" />
+                        <label for="theme-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                    </div>
+                    <label for="theme-toggle" class="text-xs text-gray-700 dark:text-gray-200">Dark Mode</label>
+                </div>
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-gray-100 dark:bg-gray-800 md:dark:bg-gray-700 dark:border-gray-700">
+                    <li>
+                        <a href="index2.html" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Features</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto min-h-96 p-4">
+        <!-- First Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div class="bg-blue-200 dark:bg-blue-700 p-4 rounded">Column 1</div>
+            <div class="bg-green-200 dark:bg-green-700 p-4 rounded">
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio debitis quaerat aspernatur illum fuga harum, adipisci amet, vero, ipsam expedita nostrum at cupiditate eligendi autem est unde repellat ea! Totam!</li>
+                    <li>illum fuga harum, adipisci amet, vero, ipsam expedita nostrum at cupiditate eligendi autem est unde repellat ea! Totam!</li>
+                    <li>psum dolor sit amet consectetur a</li>
+                </ul>
+            </div>
+            <div class="bg-red-200 dark:bg-red-700 p-4 rounded">Column 3</div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-yellow-200 dark:bg-yellow-700 p-4 rounded">Column 4</div>
+            <div class="bg-purple-200 dark:bg-purple-700 p-4 rounded">Column 5</div>
+            <div class="bg-pink-200 dark:bg-pink-700 p-4 rounded">Column 6</div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white p-4 mt-8 transition-colors duration-200">
+        <div class="container mx-auto flex justify-between items-center">
+            <p>&copy;
+                <script>document.write(new Date().getFullYear())</script> My Website
+            </p>
+            <a href="privacy-policy.html" class="hover:underline">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle for mobile menu
+        document.querySelector('[data-collapse-toggle="navbar-default"]').addEventListener('click', function () {
+            document.getElementById('navbar-default').classList.toggle('hidden');
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or use system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            themeToggle.checked = true;
+        } else {
+            html.classList.remove('dark');
+            themeToggle.checked = false;
+        }
+
+        // Listen for toggle button change
+        themeToggle.addEventListener('change', function () {
+            if (this.checked) {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            } else {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            }
+        });
+    </script>
+</body>
+
+</html>
